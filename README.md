@@ -26,7 +26,7 @@ Macro action can be anything scripted in Lua with some extensions
 * HTTP get
 * Run programs
 
-For details, see LuaMacro's [forum](http://www.hidmacros.eu/forum/viewforum.php?f=9) run by me2d13 (the devloper of the original).
+For details, see LuaMacro's [forum](http://www.hidmacros.eu/forum/viewforum.php?f=9) run by me2d13 (the developer of the original).
 # Original binary download
 Download me2d13's original binary from [luamacros.zip](http://www.hidmacros.eu/luamacros.zip). Note that this version does not incorporate any of my fixes and/or changes.
 # Developer’s guide
