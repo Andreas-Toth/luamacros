@@ -4,9 +4,11 @@ This version...
 * Drops the 7zip archived code (although the archives have been kept for posterity sake)
 * Adds lmc_get_window_path() to the list of LUA commands
 * Improves some code
+
 There are several outstanding issues, but these are the main ones…
 * Running state always shows “Not running” even when code is executing
 * If started with a script from the command-line, clicking Save will crash
+
 Planned improvements
 * I really disagree with the current implementation since it is destructive instead of being an enhancement for device input, e.g., when a callback is defined for, say a specific keyboard, one *must* map each and every key of that keyboard to an output or else those keys are swallowed up. In my opinion, the better way would be to implement a “handled” flag that is set to false by default. If the implementer of the callback then wants to trap a specific set of events while letting others pass through as normal, they can do so by controlling the value of the “handled” flag. Unfortunately, the current implementation does not lend itself to implementing such a flag very easily. [Priority: HIGH]
 * Add support for handling mouse events. [Priority: LOW]
@@ -23,7 +25,8 @@ Macro action can be anything scripted in Lua with some extensions
 * Xplane simulator events (commands, data ref changes)
 * HTTP get
 * Run programs
-For details see http://www.hidmacros.eu/forum/viewforum.php?f=9
+
+For details, see LuaMacro's [forum](http://www.hidmacros.eu/forum/viewforum.php?f=9) run by me2d13 (the devloper of the original).
 # Original binary download
 Download me2d13's original binary from [luamacros.zip](http://www.hidmacros.eu/luamacros.zip). Note that this version does not incorporate any of my fixes and/or changes.
 # Developer’s guide
@@ -35,6 +38,7 @@ Clone the following repositories from me to ensure you have working versions:
 * [LazSerial](https://github.com/Andreas-Toth/LazSerial)
 * [lnet](https://github.com/Andreas-Toth/lnet)
 * [luipack](https://github.com/Andreas-Toth/luipack)
+
 Before opening the luamacros project, you will first have to install the following packages into the Lazarus IDE.
 * etpackage_dsgn
 * extrahighlighters_dt
