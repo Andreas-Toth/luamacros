@@ -103,7 +103,6 @@ var
 const
   cGuiLoggerName = 'GUI';
 
-
 implementation
 
 {$R *.lfm}
@@ -385,7 +384,7 @@ end;
 
 procedure TLmcMainForm.Init;
 begin
-  // here Glb is alreadu created & initialized
+  // here Glb is already created & initialized
   OrderRawInputMessagesToBeReceived;
   Glb.HookService.Init(Handle);
   if (fAutoExecute) then
@@ -457,4 +456,3 @@ begin
 end;
 
 end.
-

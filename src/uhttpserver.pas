@@ -148,8 +148,9 @@ procedure THttpServer.AttendConnection(pSocket: TSocket);
 var
   timeout: integer;
   s: string;
-  method, uri, protocol: string;
-  ResultCode: integer;
+  method: string;
+  uri: string;
+  protocol: string;
   lSocket: TTCPBlockSocket;
   lAnswer: String;
   lResult: TLuaResult;

@@ -13,7 +13,7 @@ uses
   uComDeviceService, uKbdDevice, uKbdDeviceService, uRawInput, uHookService,
   uHookCommon, uKeyLogService, uSendKeys, uScanService, uLuaCmdMainWindow,
   uXplListener, uxplsender, uXplMessages, uConfigService, uHttpServer,
-  uLuaCmdHttp, uSpeechService;
+  uLuaCmdHttp, uSpeechService, uSysUtils;
 
 {$R *.res}
 
@@ -25,4 +25,3 @@ begin
   gMainForm.Init;
   Application.Run;
 end.
-

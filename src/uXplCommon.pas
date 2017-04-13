@@ -114,7 +114,7 @@ function MemoryDump(pAddr: Pointer; pSize: Integer) : String;
 var
   lP : PChar;
   i: Integer;
-  lRow, lCol: Integer;
+  lCol: Integer;
   lRes : String;
 begin
   i := 0;
@@ -152,7 +152,7 @@ end;
 
 constructor TXplVariable.Create;
 begin
-  DataRef := 0;
+  DataRef := nil;
 end;
 
 function TXplVariable.IsArray: Boolean;

@@ -42,18 +42,20 @@ uses
 
 procedure THookService.InitSharedMemory(pMainFormHandle: THandle);
 begin
+  fSharedMemory := nil;
   fSMPtr := nil;
+
   try
-    fSharedMemory := TMemMap.Create(MMFName, SizeOf(TMMFData));
+    fSharedMemory := TMemMap.Create(MMFName, SizeOf(TMMFData), True);
     fSMPtr := fSharedMemory.Memory;
   except
-    on EMemMapException do
+    on E: Exception do
     begin
-      Glb.LogError('Can''t create shared memory.', cLoggerHook);
-      fSharedMemory := nil;
+      Glb.LogError('Can''t create shared memory (' + E.Message + ').', cLoggerHook);
     end;
   end;
-  if fSMPtr <> nil then
+
+  if Assigned(fSMPtr) then
   begin
     fSMPtr^.MainWinHandle := pMainFormHandle;
     fSMPtr^.LmcPID := GetCurrentProcessId;

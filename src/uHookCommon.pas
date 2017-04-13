@@ -4,7 +4,8 @@ unit uHookCommon;
 
 interface
 
-uses Messages, Windows;
+uses
+  Windows;
 
 const
   MMFName = 'LuaMacrosSharedMem';

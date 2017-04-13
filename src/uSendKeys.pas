@@ -195,7 +195,6 @@ var
   I, L, ShiftIndex : Integer;
   NumTimes, MKey : Word;
   KeyString : String[20];
-  TmpString: String;
   AllocationSize : integer;
 begin
   AllocationSize:=MaxInt;
@@ -351,8 +350,8 @@ begin
 end;
 
 Procedure TKeySequence.KeyboardEvent(VKey, ScanCode : Byte; Flags : Longint);
-var
-  KeyboardMsg : TMsg;
+//var
+//  KeyboardMsg : TMsg;
 begin
     keybd_event(VKey, ScanCode, Flags,13);
     //StrPCopy(tmp, 'KEYB: Sending scan code ' + IntToStr(VKey));
@@ -462,6 +461,5 @@ begin
     fShiftsDown[I] := False;
   end
 end;
-
 
 end.

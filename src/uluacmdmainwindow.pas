@@ -18,11 +18,13 @@ function MinimizeMainWindow(luaState : TLuaState) : integer;
 function LoadScript(luaState : TLuaState) : integer;
 function Say(luaState : TLuaState) : integer;
 function GetActiveWindowTitle(luaState : TLuaState) : integer;
+function GetActiveWindowPath(const ALuaState: TLuaState): Integer;
 
 implementation
 
 uses
-  uSendKeys, Process, Windows;
+  uSendKeys, Process, Windows,
+  uSysUtils;
 
 function FormPrint(luaState : TLuaState) : integer;
 var arg : PAnsiChar;
@@ -169,6 +171,22 @@ begin
   Result := 1;
 end;
 
+function GetActiveWindowPath(const ALuaState: TLuaState): Integer;
+var
+  LParamCount: Integer;
+  LPath: string;
+begin
+  LParamCount := lua_gettop(ALuaState);
+
+  if LParamCount <> 0 then
+  begin
+    raise LmcException.Create('Wrong number of parameters. No argument expected.');
+  end;
+
+  LPath := GetForegroundWindowFileName;
+
+  lua_pushstring(ALuaState, PChar(LPath));
+  Result := 1;
+end;
 
 end.
-

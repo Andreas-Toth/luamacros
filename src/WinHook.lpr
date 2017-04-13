@@ -2,11 +2,14 @@ library WinHook;
 
 {$mode delphi}
 
+{$R *.res}
+
 uses
-  Classes, uHookCommon, uWHookInt
-  { you can add units after this };
+  Classes,
+  uHookCommon,
+  uWHookInt;
 
 exports
-  MsgFilterFuncKbd index 1;
-end.
+  MsgFilterFuncKbd Index 1;
 
+end.

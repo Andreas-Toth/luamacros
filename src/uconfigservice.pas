@@ -98,7 +98,6 @@ function GetParam(L: Lua_State): Integer; cdecl;
 var
   lNumOfParams: Integer;
   arg : PAnsiChar;
-  lBoolean: Boolean;
   lDesc: TParamDescriptor;
   lInt: LongInt;
 begin

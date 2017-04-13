@@ -306,7 +306,7 @@ begin
   // wait for XPL answer
   lDataRead := fXplSyncListener.Server.PeekMessage(1000, true); // in ms
   // function above should return true when something was read
-  // however it seems to return falsi even when onMessage method was called :-(
+  // however it seems to return false even when onMessage method was called :-(
   // so check also if xpl variable is set with correct id
   // in fact ignore this result, just check fXplVariableValue
   if (fXplVariableValue <> nil) and (fXplVariableValue.Id = lId) then
@@ -366,6 +366,5 @@ begin
   fXplSender.SendMessage(lXplObj);
   lXplObj.Free;
 end;
-
 
 end.

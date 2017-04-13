@@ -1,57 +1,58 @@
 unit uWHookInt;
 
+// TODO: Replace hardcoded log file name with configurable string
+
 {$mode delphi}
 
 interface
 
 uses
-  Windows, Messages, SysUtils, uHookCommon;
+  Windows, SysUtils, uHookCommon;
 
 function MsgFilterFuncKbd(Code: longint; wParam: WPARAM; lParam: LPARAM): LRESULT stdcall; export;
 
-
 implementation
 
-uses MemMap;
+uses
+  MemMap,
+  uSysUtils;
 
-const
-  WH_KEYBOARD_LL = 13;
+//const
+//  WH_KEYBOARD_LL = 13;
 
-type
- { Structure used by WH_KEYBOARD_LL }
- PKBDLLHookStruct = ^TKBDLLHookStruct;
- {$EXTERNALSYM tagKBDLLHOOKSTRUCT}
- tagKBDLLHOOKSTRUCT = packed record
-   vkCode: DWORD;
-   scanCode: DWORD;
-   flags: DWORD;
-   time: DWORD;
-   dwExtraInfo: PULONG;
- end;
- TKBDLLHookStruct = tagKBDLLHOOKSTRUCT;
- {$EXTERNALSYM KBDLLHOOKSTRUCT}
- KBDLLHOOKSTRUCT = tagKBDLLHOOKSTRUCT;
+//type
+// PKBDLLHookStruct = ^TKBDLLHookStruct;
+// {$EXTERNALSYM tagKBDLLHOOKSTRUCT}
+// tagKBDLLHOOKSTRUCT = packed record
+//   vkCode: DWORD;
+//   scanCode: DWORD;
+//   flags: DWORD;
+//   time: DWORD;
+//   dwExtraInfo: PULONG;
+// end;
+// TKBDLLHookStruct = tagKBDLLHOOKSTRUCT;
+// {$EXTERNALSYM KBDLLHOOKSTRUCT}
+// KBDLLHOOKSTRUCT = tagKBDLLHOOKSTRUCT;
 
- ULONG_PTR = ^DWORD;
+// ULONG_PTR = ^DWORD;
 
 // Actual hook stuff
 
-type
-  TPMsg = ^TMsg;
+//type
+//  TPMsg = ^TMsg;
 
-const
-  VK_D = $44;
-  VK_E = $45;
-  VK_F = $46;
-  VK_M = $4D;
-  VK_R = $52;
+//const
+//  VK_D = $44;
+//  VK_E = $45;
+//  VK_F = $46;
+//  VK_M = $4D;
+//  VK_R = $52;
 
-  // global variables, only valid in the process which installs the hook.
 var
+  // Global variables only valid in the process which installs the hook
   gMemMap: TMemMap;
   gSharedPtr: PMMFData;
   gPid: DWORD;
-
 
 {
   The SetWindowsHookEx function installs an application-defined
@@ -63,44 +64,31 @@ var
 }
 
 procedure DebugLog(Value: String);
+const
+  CFileName: UnicodeString = 'LmcDll.log';
 var
+  LLogFile: UnicodeString;
   lFile: TextFile;
   lDebug: Boolean;
 begin
   lDebug:= false and ((gSharedPtr <> nil) and (gSharedPtr^.Debug > 0));
+
   if lDebug then
   begin
-    AssignFile(lFile, 'C:\Temp\LmcDll.log');
-    if FileExists('C:\Temp\LmcDll.log') then
+    LLogFile := USysUtils.GetTempPath + CFileName;
+
+    AssignFile(lFile, LLogFile);
+
+    if FileExists(LLogFile) then
       Append(lFile)
     else
       Rewrite(lFile);
+
     Write(lFile, Format('%s [DLL]: %s', [FormatDateTime('yyyy-mm-dd hh:nn:ss:zzz', Now), Value]));
     WriteLn(lFile);
     CloseFile(lFile);
   end;
 end;
-
-function GetPathFromPID(const PID: cardinal): string;
-var
-  hProcess: THandle;
-  path: array[0..MAX_PATH - 1] of char;
-begin
-  hProcess := OpenProcess(PROCESS_QUERY_INFORMATION or PROCESS_VM_READ, false, PID);
-  if hProcess <> 0 then
-    try
-      if GetModuleFileName(hProcess, path, MAX_PATH) = 0 then
-        RaiseLastOSError;
-      result := path;
-    finally
-      CloseHandle(hProcess)
-    end
-  else
-    RaiseLastOSError;
-end;
-
-
-
 
 (*
     GetMsgProc(
@@ -136,28 +124,32 @@ end;
 
 
 initialization
-begin
+  gMemMap := nil;
   gPid := GetCurrentProcessId;
   gSharedPtr := nil;
-  //DebugLog('Attached to PID ' + IntToStr(gPid));
   try
-    gMemMap := TMemMap.Create(MMFName, SizeOf(TMMFData));
-    gSharedPtr := gMemMap.Memory;
+    gMemMap := TMemMap.Create(MMFName, SizeOf(TMMFData), False);
   except
-    on EMemMapException do
+    on E: Exception do
     begin
-      DebugLog(IntToStr(gPid)+': Can''t create MMF.');
-      gMemMap := nil;
+      DebugLog(IntToStr(gPid)+': Error creating MMF (' + E.Message + ').');
+      raise;
     end;
   end;
-end;
+
+  gSharedPtr := gMemMap.Memory;
+
 
 finalization
-  if gMemMap <> nil then
-    try
-      gMemMap.Free;
-    except
-      on EMemMapException do
-        DebugLog(IntToStr(gPid)+': Can''t release MMF.');
+  if Assigned(gMemMap) then
+  try
+    FreeAndNil(gMemMap);
+  except
+    on E: Exception do
+    begin
+      DebugLog(IntToStr(gPid)+': Error destroying MMF (' + E.Message + ').');
+      raise;
     end;
+  end;
+
 end.

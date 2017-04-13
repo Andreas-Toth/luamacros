@@ -5,7 +5,8 @@ unit uKeyLogService;
 interface
 
 uses
-  uRawInput, Classes, SysUtils, uKbdDevice;
+  uRawInput, Classes, SysUtils, uKbdDevice,
+  Windows, dateutils, uDevice, uHookService;
 
 const
   cLogArrayLength = 100;
@@ -19,7 +20,7 @@ type
 
   { TKeyLogService }
 
-  TKeyLogService = class
+  TKeyLogService = class(TObject)
     private
       fLog: Array[0..cLogArrayLength] of TKeyLogItem;
       fIndex: Integer; // points to first free block
@@ -38,7 +39,8 @@ type
 implementation
 
 uses
-  Windows, dateutils, uDevice, uGlobals, uHookService;
+  uGlobals;
+//  Windows, dateutils, uDevice, uGlobals, uHookService;
 
 { TKeyLogService }
 
@@ -55,13 +57,13 @@ end;
 
 function TKeyLogService.AddRaw(pRawdata: PRAWINPUT): TKeyStrokePtr;
 begin
-  case pRawdata^.keyboard.Message of
+  case pRawdata^.data.keyboard.Message of
     WM_KEYDOWN, WM_SYSKEYDOWN: fLog[fIndex].KeyStroke.Direction:=cDirectionDown;
     WM_KEYUP, WM_SYSKEYUP: fLog[fIndex].KeyStroke.Direction:=cDirectionUp;
   end;
   fLog[fIndex].TimeStamp:=Glb.UnixTimestampMs;
   fLog[fIndex].KeyStroke.DeviceHandle:=pRawdata^.header.hDevice;
-  fLog[fIndex].KeyStroke.VKeyCode:=pRawdata^.keyboard.VKey;
+  fLog[fIndex].KeyStroke.VKeyCode:=pRawdata^.data.keyboard.VKey;
   Result := @(fLog[fIndex].KeyStroke);
   if (Glb.ScanService.Scanning) and (fLog[fIndex].KeyStroke.Direction=cDirectionDown) then
   begin
@@ -103,7 +105,6 @@ var
   I: Integer;
   lIndex: Integer;
   lTimeDiff: Integer;
-  lNewItemsCount: Integer;
 begin
   // heart of LuaMacros
   // search log of received low level messages (with specific keyboard id)
@@ -133,11 +134,9 @@ var
   I: Integer;
   lIndex: Integer;
   lKsPtr: TKeyStrokePtr;
-  lFiredCnt: Integer;
   lNow: LongInt;
 begin
   lNow := Glb.UnixTimestampMs;
-  lFiredCnt := 0;
   for I := 1 to cLogArrayLength do
   begin
     lIndex:=(fIndex + cLogArrayLength - I) mod cLogArrayLength;
@@ -159,4 +158,3 @@ begin
 end;
 
 end.
-

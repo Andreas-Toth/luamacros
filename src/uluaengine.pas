@@ -402,7 +402,6 @@ var
   lStart, lStop: LongInt;
   lProc: TRunItem;
   lFunc: TFuncItem;
-  lResult: TLuaResult;
   lDesc: String;
 begin
   while (not Terminated) do
@@ -970,6 +969,7 @@ begin
   fLua.RegisterFunction('lmc_load','',nil,@LoadScript);
   fLua.RegisterFunction('lmc_say','',nil,@Say);
   fLua.RegisterFunction('lmc_get_window_title', '', nil, @GetActiveWindowTitle);
+  fLua.RegisterFunction('lmc_get_window_path', '', nil, @GetActiveWindowPath);
   // devices
   fLua.RegisterFunction('lmc_print_devices','',nil,@PrintDevices);
   fLua.RegisterFunction('lmc_assign_keyboard','',nil,@CheckDeviceNameWithAsk);

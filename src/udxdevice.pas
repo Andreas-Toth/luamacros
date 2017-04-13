@@ -96,7 +96,7 @@ end;
 
 function TDxDevice.getAxisIndex(pOffset: DWORD): Integer;
 begin
-  if (pOffset >= 0) and (pOffset <= 28) and (pOffset mod 4 = 0) then
+  if {(pOffset >= 0) and} (pOffset <= 28) and (pOffset mod 4 = 0) then
     result := pOffset div 4
   else
     result := -1;
@@ -117,7 +117,7 @@ end;
 
 procedure TDxDevice.ReadEventBuffer;
 var
-  I: Integer;
+  i: Integer;
   hr: HRESULT;
   events: array[0..cBufferSize] of DIDEVICEOBJECTDATA;
   dwItems: DWORD;
@@ -145,7 +145,7 @@ begin
   begin
     //if (Name = 'LB2') then
     //Glb.DebugLogFmt('Device %s read %d events', [Name, dwItems], cLoggerDx);
-    for I := 0 to dwItems - 1 do
+    for i := 0 to dwItems - 1 do
     begin
       HandleEvent(events[i]);
       //Glb.DebugLogFmt('Device %s event, offset %d, data %d, sequence %d ', [Name, events[i].dwOfs, events[i].dwData, events[i].dwSequence], cLoggerDx);
@@ -157,11 +157,10 @@ begin
 end;
 
 constructor TDxDevice.Create;
-var
-  I : Integer;
+//var
+//  I : Integer;
 begin
   fBufferSize:=cBufferSize;
 end;
 
 end.
-

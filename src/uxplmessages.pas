@@ -219,15 +219,14 @@ type
     property Value: String read fValue write fValue;
   end;
 
-
 implementation
 
 uses
   uXplCommon, math;
 
 function StrToFloatWithDecimalPoint(const Value: String): Double;
-var
-  myFormatSettings: TFormatSettings;
+//var
+//  myFormatSettings: TFormatSettings;
 begin
   //GetLocaleFormatSettings(GetThreadLocale, myFormatSettings);
   DecimalSeparator := '.';
@@ -690,4 +689,3 @@ begin
 end;
 
 end.
-
