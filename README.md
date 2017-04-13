@@ -29,12 +29,12 @@ Download me2d13's original binary from [luamacros.zip](http://www.hidmacros.eu/l
 # Developer’s guide
 To compile & extend LuaMacros yourself you need to download and install the latest Lazarus environment (http://www.lazarus-ide.org/).
 Clone the following repositories from me to ensure you have working versions:
-* [luamacros]( https://github.com/Andreas-Toth/luamacros)
-* [epiktimer]( https://github.com/Andreas-Toth/ epiktimer)
-* [ExtraHighlighters]( https://github.com/Andreas-Toth/ ExtraHighlighters)
-* [LazSerial]( https://github.com/Andreas-Toth/ LazSerial)
-* [lnet]( https://github.com/Andreas-Toth/ lnet)
-* [luipack]( https://github.com/Andreas-Toth/ luipack)
+* [luamacros](https://github.com/Andreas-Toth/luamacros)
+* [epiktimer](https://github.com/Andreas-Toth/epiktimer)
+* [ExtraHighlighters](https://github.com/Andreas-Toth/ExtraHighlighters)
+* [LazSerial](https://github.com/Andreas-Toth/LazSerial)
+* [lnet](https://github.com/Andreas-Toth/lnet)
+* [luipack](https://github.com/Andreas-Toth/luipack)
 Before opening the luamacros project, you will first have to install the following packages into the Lazarus IDE.
 * etpackage_dsgn
 * extrahighlighters_dt
