@@ -49,6 +49,6 @@ Now you should be able to open the three projects that are part of the main repo
 * WinHook - DLL to set global keyboard hook. Be sure to build this or else LuaMacros won’t run (this will pace the DLL in out).
 * LuaMacros - The main application exe. Important: if you need to execute compiled EXE, don't forget to copy Lua DLLs from the lib directory to the same place as the EXE file (i.e., out) or the program will crash with a segmentation error (visible in the IDE).
 * XplPlugin – Optional XPlane plugin DLL. Note that this is a 64-bit project.
-* When starting from your build environment make sure you copy LUA dlls (see lib folder) into your output directory. These dlls must be in the same directory as LuaMacros.exe. Without them program even won't start at all or crashes with some segmentation error (in IDE)
+
 
 -Andreas
