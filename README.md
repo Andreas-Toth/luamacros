@@ -29,7 +29,7 @@ Macro action can be anything scripted in Lua with some extensions
 * Run programs
 
 For details, see LuaMacro's [forum](http://www.hidmacros.eu/forum/viewforum.php?f=9) run by me2d13 (the developer of the original).
-# Original binary download
+# Binaries
 You can download the binaries from https://github.com/Andreas-Toth/LuaMacros-Bin.
 # Developer’s guide
 To compile LuaMacros you need to download and install the latest Lazarus environment (http://www.lazarus-ide.org/).
