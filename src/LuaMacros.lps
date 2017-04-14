@@ -20,7 +20,6 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uMainFrm"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="3"/>
         <TopLine Value="375"/>
         <CursorPos X="92" Y="410"/>
@@ -80,8 +79,9 @@
         <Filename Value="uluaengine.pas"/>
         <IsPartOfProject Value="True"/>
         <UnitName Value="uLuaEngine"/>
+        <IsVisibleTab Value="True"/>
         <EditorIndex Value="1"/>
-        <TopLine Value="849"/>
+        <TopLine Value="945"/>
         <CursorPos X="35" Y="899"/>
         <UsageCount Value="200"/>
         <Bookmarks Count="2">
