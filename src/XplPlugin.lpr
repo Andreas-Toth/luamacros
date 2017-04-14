@@ -185,6 +185,8 @@ function MyDrawCallbackFunc(inPhase             : XPLMDrawingPhase;
     XPluginEnable,
     XPluginDisable;
 
+{$R *.res}
+
   begin
   end.
 

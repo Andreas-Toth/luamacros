@@ -893,8 +893,8 @@
       </Unit106>
       <Unit107>
         <Filename Value="..\..\wifly\xplane-plugin\SDK\Delphi\Widgets\XPWidgetUtils.pas"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
         <TopLine Value="46"/>
         <CursorPos X="35" Y="63"/>
         <UsageCount Value="12"/>

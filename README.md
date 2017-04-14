@@ -56,5 +56,8 @@ Now you should be able to open the three projects that are part of the main repo
 * LuaMacros - The main application exe. Important: if you need to execute compiled EXE, don't forget to copy Lua DLLs from the lib directory to the same place as the EXE file (i.e., out) or the program will crash with a segmentation error (visible in the IDE).
 * XplPlugin – Optional XPlane plugin DLL. Note that this is a 64-bit project.
 
+# Notes
+* The binaries built from this fork are tagged with the name of the repository (i.e., "https://github.com/Andreas-Toth/luamacros") so that they can be distinguished from other builds.
+
 
 -Andreas

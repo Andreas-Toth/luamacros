@@ -19,8 +19,10 @@
     </i18n>
     <VersionInfo>
       <UseVersionInfo Value="True"/>
-      <MajorVersionNr Value="2"/>
-      <StringTable ProductVersion=""/>
+      <AutoIncrementBuild Value="True"/>
+      <MajorVersionNr Value="1"/>
+      <BuildNr Value="5"/>
+      <StringTable ProductName="https://github.com/Andreas-Toth/luamacros" ProductVersion="1.0"/>
     </VersionInfo>
     <BuildModes Count="1">
       <Item1 Name="Default" Default="True"/>

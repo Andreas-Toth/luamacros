@@ -9,9 +9,9 @@
         <Filename Value="WinHook.lpr"/>
         <IsPartOfProject Value="True"/>
         <IsVisibleTab Value="True"/>
+        <EditorIndex Value="-1"/>
         <CursorPos X="3" Y="10"/>
         <UsageCount Value="29"/>
-        <Loaded Value="True"/>
       </Unit0>
       <Unit1>
         <Filename Value="uHookCommon.pas"/>
@@ -124,6 +124,9 @@
         <UsageCount Value="10"/>
       </Unit16>
     </Units>
+    <General>
+      <ActiveWindowIndexAtStart Value="-1"/>
+    </General>
     <JumpHistory HistoryIndex="-1"/>
   </ProjectSession>
 </CONFIG>
