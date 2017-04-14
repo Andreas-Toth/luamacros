@@ -79,5 +79,4 @@ __recovery
 
 # Generated directories
 **/out/
-**/inc/lib/
 **/src/lib/

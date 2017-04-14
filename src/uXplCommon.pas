@@ -91,20 +91,12 @@ uses SysUtils;
 
 function Pointer2Pointer8b(Input: Pointer) : Pointer8b;
 begin
-  {$IFDEF WIN64}
   Result := Pointer8b(Input);
-  {$ELSE}
-  Result := Pointer8b(Input);
-  {$ENDIF}
 end;
 
 function Pointer8b2Pointer(Input: Pointer8b) : Pointer;
 begin
-  {$IFDEF WIN64}
   Result := Pointer(Input);
-  {$ELSE}
-  Result := Pointer(Input);
-  {$ENDIF}
 end;
 
 const

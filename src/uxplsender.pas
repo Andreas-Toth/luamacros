@@ -32,9 +32,6 @@ type
 
 implementation
 
-uses
-  uXplCommon, XPLMUtilities;
-
 { TXplSender }
 
 procedure TXplSender.DebugFmt(pFormat: String; pArgs: array of const);
