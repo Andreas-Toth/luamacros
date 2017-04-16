@@ -4,7 +4,7 @@
     <PathDelim Value="\"/>
     <Version Value="10"/>
     <BuildModes Active="Default"/>
-    <Units Count="108">
+    <Units Count="113">
       <Unit0>
         <Filename Value="LuaMacros.lpr"/>
         <IsPartOfProject Value="True"/>
@@ -20,10 +20,10 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <UnitName Value="uMainFrm"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="375"/>
-        <CursorPos X="92" Y="410"/>
+        <IsVisibleTab Value="True"/>
+        <CursorPos X="58" Y="3"/>
         <UsageCount Value="202"/>
+        <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit1>
       <Unit2>
@@ -112,8 +112,7 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="uDxDevice"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="110"/>
-        <CursorPos X="3" Y="161"/>
+        <CursorPos X="31" Y="8"/>
         <UsageCount Value="200"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit10>
@@ -236,7 +235,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="123"/>
         <CursorPos X="11" Y="165"/>
-        <UsageCount Value="187"/>
+        <UsageCount Value="188"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit23>
       <Unit24>
@@ -245,7 +244,7 @@
         <UnitName Value="uXplListener"/>
         <EditorIndex Value="-1"/>
         <CursorPos X="3" Y="14"/>
-        <UsageCount Value="185"/>
+        <UsageCount Value="186"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit24>
       <Unit25>
@@ -255,7 +254,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="2"/>
         <CursorPos X="51" Y="27"/>
-        <UsageCount Value="181"/>
+        <UsageCount Value="182"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit25>
       <Unit26>
@@ -265,7 +264,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="200"/>
         <CursorPos X="3" Y="230"/>
-        <UsageCount Value="175"/>
+        <UsageCount Value="176"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit26>
       <Unit27>
@@ -275,7 +274,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="233"/>
         <CursorPos X="10" Y="59"/>
-        <UsageCount Value="105"/>
+        <UsageCount Value="106"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit27>
       <Unit28>
@@ -283,9 +282,8 @@
         <IsPartOfProject Value="True"/>
         <UnitName Value="uHttpServer"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="137"/>
-        <CursorPos Y="151"/>
-        <UsageCount Value="100"/>
+        <CursorPos X="51" Y="8"/>
+        <UsageCount Value="101"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit28>
       <Unit29>
@@ -295,7 +293,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="51"/>
         <CursorPos X="3" Y="53"/>
-        <UsageCount Value="98"/>
+        <UsageCount Value="99"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit29>
       <Unit30>
@@ -305,7 +303,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="119"/>
         <CursorPos X="35" Y="136"/>
-        <UsageCount Value="83"/>
+        <UsageCount Value="84"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit30>
       <Unit31>
@@ -315,7 +313,7 @@
         <EditorIndex Value="-1"/>
         <TopLine Value="2"/>
         <CursorPos X="37" Y="14"/>
-        <UsageCount Value="30"/>
+        <UsageCount Value="31"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit31>
       <Unit32>
@@ -407,6 +405,7 @@
         <TopLine Value="370"/>
         <CursorPos X="6" Y="384"/>
         <UsageCount Value="10"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit42>
       <Unit43>
         <Filename Value="C:\Progra~1\Lazarus\fpc\3.0.2\source\packages\rtl-objpas\src\inc\dateutils.pp"/>
@@ -556,10 +555,10 @@
         <UsageCount Value="9"/>
       </Unit61>
       <Unit62>
-        <Filename Value="..\..\ExtraHighlighters\SynEditHighlighters\SynHighlighterLua.pas"/>
+        <Filename Value="..\..\ExtraHighlighters\SyneditHighlighters\SynHighlighterLua.pas"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="50"/>
-        <CursorPos X="3" Y="79"/>
+        <CursorPos X="13" Y="79"/>
         <UsageCount Value="15"/>
       </Unit62>
       <Unit63>
@@ -733,7 +732,7 @@
       <Unit86>
         <Filename Value="..\..\LazSerial\LazSerialPort.pas"/>
         <EditorIndex Value="-1"/>
-        <CursorPos X="15" Y="6"/>
+        <CursorPos X="3" Y="10"/>
         <UsageCount Value="11"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit86>
@@ -900,10 +899,41 @@
         <UsageCount Value="12"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit107>
+      <Unit108>
+        <Filename Value="..\..\LazSerial\lazserial.pas"/>
+        <UnitName Value="LazSerial"/>
+        <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
+        <TopLine Value="42"/>
+        <CursorPos X="13" Y="62"/>
+        <UsageCount Value="10"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit108>
+      <Unit109>
+        <Filename Value="..\..\delphi-dx9sdk\Headers\DirectInput.pas"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="58"/>
+        <UsageCount Value="10"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
+      </Unit109>
+      <Unit110>
+        <Filename Value="C:\Progra~1\Lazarus\lcl\comctrls.pp"/>
+        <UnitName Value="ComCtrls"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="10"/>
+      </Unit110>
+      <Unit111>
+        <Filename Value="C:\Progra~1\Lazarus\lcl\pairsplitter.pas"/>
+        <UnitName Value="PairSplitter"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="10"/>
+      </Unit111>
+      <Unit112>
+        <Filename Value="C:\Progra~1\Lazarus\fpc\3.0.2\source\packages\winunits-base\src\comobj.pp"/>
+        <EditorIndex Value="-1"/>
+        <UsageCount Value="10"/>
+      </Unit112>
     </Units>
-    <General>
-      <ActiveWindowIndexAtStart Value="-1"/>
-    </General>
     <JumpHistory HistoryIndex="-1"/>
   </ProjectSession>
 </CONFIG>

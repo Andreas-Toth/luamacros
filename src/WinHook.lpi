@@ -21,7 +21,7 @@
       <UseVersionInfo Value="True"/>
       <AutoIncrementBuild Value="True"/>
       <MajorVersionNr Value="1"/>
-      <BuildNr Value="5"/>
+      <BuildNr Value="6"/>
       <StringTable ProductName="https://github.com/Andreas-Toth/luamacros" ProductVersion="1.0"/>
     </VersionInfo>
     <BuildModes Count="1">

@@ -8,8 +8,8 @@
       <Unit0>
         <Filename Value="WinHook.lpr"/>
         <IsPartOfProject Value="True"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
         <CursorPos X="3" Y="10"/>
         <UsageCount Value="29"/>
       </Unit0>

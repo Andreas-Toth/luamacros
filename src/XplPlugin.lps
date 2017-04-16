@@ -8,8 +8,8 @@
       <Unit0>
         <Filename Value="XplPlugin.lpr"/>
         <IsPartOfProject Value="True"/>
-        <IsVisibleTab Value="True"/>
         <EditorIndex Value="-1"/>
+        <WindowIndex Value="-1"/>
         <TopLine Value="79"/>
         <CursorPos X="7" Y="121"/>
         <UsageCount Value="101"/>

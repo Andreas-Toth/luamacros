@@ -18,7 +18,7 @@
       <UseVersionInfo Value="True"/>
       <AutoIncrementBuild Value="True"/>
       <MajorVersionNr Value="1"/>
-      <BuildNr Value="5"/>
+      <BuildNr Value="13"/>
       <StringTable ProductName="https://github.com/Andreas-Toth/luamacros" ProductVersion="1.0"/>
     </VersionInfo>
     <BuildModes Count="1">
@@ -32,25 +32,19 @@
         <FormatVersion Value="1"/>
       </local>
     </RunParams>
-    <RequiredPackages Count="6">
+    <RequiredPackages Count="4">
       <Item1>
-        <PackageName Value="lnetbase"/>
+        <PackageName Value="extrahighlighters_RT"/>
       </Item1>
       <Item2>
         <PackageName Value="uniqueinstance_package"/>
       </Item2>
       <Item3>
-        <PackageName Value="ExtraHighlighters_RT"/>
+        <PackageName Value="SynEdit"/>
       </Item3>
       <Item4>
-        <PackageName Value="LazSerialPort"/>
-      </Item4>
-      <Item5>
-        <PackageName Value="SynEdit"/>
-      </Item5>
-      <Item6>
         <PackageName Value="LCL"/>
-      </Item6>
+      </Item4>
     </RequiredPackages>
     <Units Count="32">
       <Unit0>
@@ -219,7 +213,7 @@
     </Target>
     <SearchPaths>
       <IncludeFiles Value="$(ProjOutDir)"/>
-      <OtherUnitFiles Value="..\..\Lua;..\..\wifly\xplane-plugin\SDK\Delphi\XPLM;..\..\delphi-dx9sdk.new\Headers;..\..\Ararat-Synapse\trunk;..\..\LazSerial;..\..\luipack\uniqueinstance"/>
+      <OtherUnitFiles Value="..\..\Lua;..\..\wifly\xplane-plugin\SDK\Delphi\XPLM;..\..\delphi-dx9sdk\Headers;..\..\LazSerial;..\..\Ararat-Synapse\trunk;..\..\lnet\trunk\lib"/>
       <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
     </SearchPaths>
     <Parsing>
